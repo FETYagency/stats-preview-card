@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+/* css reset */
+
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* storing variables */
+:root{
+    --Whitemainheadingstats: hsl(0, 0%, 100%);
+    --Slightly-transparent-white-mainparagraph: hsla(0, 0%, 100%, 0.75);
+    --Slightly-transparent-white-stat-headings: hsla(0, 0%, 100%, 0.6);
+    --Soft-violet-accent: hsl(277, 64%, 61%);
+    --Dark-desaturated-blue-card-background: hsl(244, 38%, 16%);
+    --Very-dark-blue-main-backgroun: hsl(233, 47%, 7%);
+    font-size: 15px;
+}
+main{
+    background-color: var(--Very-dark-blue-main-backgroun);
+    height: 100vh;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    width: min(270px, 90%);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--Dark-desaturated-blue-card-background);
+    border-radius: 10px;
+}
+
+/* the most informed side's formatting code */
+
+.left{
+    order: 2;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.1rem;
+    padding: 30px 20px;
+}
+.left>h1{
+    color: var(--Whitemainheadingstats);
+    font-size: 1.5rem;
+    width: min(210px, 100%);
+    line-height: 1.2;
+}
+.left>h1>span{
+    color: var(--Soft-violet-accent);
+}
+.left>p{
+    font-size: .9rem;
+    font-weight: 400;
+    color: var(--Slightly-transparent-white-mainparagraph);
+    width: min(230px, 100%);
+    line-height: 1.7;
+}
+.left>.stats{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.left>.stats>.stats-content{
+    font-family: 'Lexend Deca', sans-serif;
+    text-transform: uppercase;
+    font-size: .7rem;
+    color: var(--Slightly-transparent-white-stat-headings);
+    font-weight: 400;
+}
+.left>.stats>.stats-content:first-child>p:first-child{
+    text-transform: lowercase;
+}
+.left>.stats>.stats-content>p:first-child{
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--Whitemainheadingstats);
+    font-size: 1.3rem;
+    margin-bottom: .63rem;
+    text-transform: uppercase;
+}
+
+
+/* you're going to read the right side's(image) formatting code */
+.right{
+    position: relative;
+}
+.right>.filter{
+    position: absolute;
+    opacity: .6;
+    background-color: blueviolet;
+    height: 100%;
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.right>picture>img{
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+}
+@media (min-width:600px) {
+    .container{
+        flex-direction: row;
+        width: min(900px, 90%);
+    }
+    .left{
+        flex: 1 ;
+        order: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+        padding: 50px 20px 50px 50px;
+    }
+    .left>h1{
+        font-size: 1.8rem;
+        width: 100%;
+    }
+    .left>p{
+        width: min(350px, 100%);
+    }
+    .left>.stats{
+        flex-direction: row;
+        gap: 2rem;
+        padding-top: 40px;
+    }
+    .left>.stats>.stats-content>p:first-child{
+        font-size: 1.4rem;
+    }
+    .right{
+        order: 2;
+        flex: 1;
+    }
+    .right>picture>img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .right>.filter{
+        border-radius: 0px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    
+}
