@@ -138,7 +138,7 @@ main{
 .right>.filter{
     position: absolute;
     opacity: .6;
-    background-color: blueviolet;
+    background-color: var(--Soft-violet-accent);
     height: 100%;
     z-index: 999;
     width: 100%;
@@ -158,31 +158,36 @@ main{
 @media (min-width:600px) {
     .container{
         flex-direction: row;
-        width: min(900px, 90%);
+        width: min(1100px, 90%);
     }
     .left{
         flex: 1 ;
         order: 1;
+        gap: 1.6rem;
         display: flex;
         justify-content: center;
         align-items: flex-start;
         text-align: left;
-        padding: 50px 20px 50px 50px;
+        padding: 50px 20px 50px 70px;
     }
     .left>h1{
-        font-size: 1.8rem;
-        width: 100%;
+        font-size: 2.5rem;
+        width: min(400px, 100%);
     }
     .left>p{
-        width: min(350px, 100%);
+        font-size: 1.1rem;
+        width: min(380px, 100%);
     }
     .left>.stats{
         flex-direction: row;
-        gap: 2rem;
+        gap: 3rem;
         padding-top: 40px;
     }
+    .left>.stats>.stats-content>p{
+        font-size: .9rem;
+    }
     .left>.stats>.stats-content>p:first-child{
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
     .right{
         order: 2;
